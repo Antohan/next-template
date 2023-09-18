@@ -1,6 +1,6 @@
+import { notFound } from 'next/navigation';
 import { createTranslator, useLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
 type Props = PropsWithChildren<{
@@ -32,9 +32,7 @@ export default function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
-      <body className="flex min-h-screen flex-col bg-stone-900 text-slate-400 antialiased">
-        {children}
-      </body>
+      <body className="flex min-h-screen flex-col bg-stone-900 text-slate-400 antialiased">{children}</body>
     </html>
   );
 }

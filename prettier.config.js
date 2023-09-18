@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: ['prettier-plugin-tailwindcss', '@ianvs/prettier-plugin-sort-imports'],
   printWidth: 120,
   singleQuote: true,
   bracketSpacing: true,
@@ -8,4 +8,20 @@ module.exports = {
   importOrderCaseInsensitive: true,
   importOrderMergeDuplicateImports: true,
   importOrderCombineTypeAndValueImports: true,
+  importOrder: [
+    '^radix-ui/(.*)$',
+    '^(next/(.*)$)|^(next$)',
+    '^next-.+$',
+    '^(react/(.*)$)|^(react$)',
+    '^react-.+$',
+    '<THIRD_PARTY_MODULES>',
+    '',
+    '<BUILTIN_MODULES>',
+    '',
+    '^[@/]',
+    '',
+    '^../(.*)$',
+    '',
+    '^[./]',
+  ],
 };
